@@ -85,6 +85,7 @@ public class ContactsActivity extends BaseActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_contacts);
 
         ((Button) findViewById(R.id.activity_contacts_add)).setOnClickListener(

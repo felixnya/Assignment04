@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.felix.assignment04"
-        android:versionCode="4"
-        android:versionName="1.0RC5" >
+    android:versionCode="4"
+    android:versionName="1.0RC5">
 
+    <uses-permission android:name="android.permission.INTERNET" />
 
-        <uses-permission android:name="android.permission.INTERNET" />
+    <application
+        android:name=".ContactApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name">
+        <activity
+            android:name=".ContactsActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <application
-            android:name=".ContactApplication"
-            android:allowBackup="true"
-            android:icon="@drawable/ic_launcher"
-            android:label="@string/app_name" >
-            <activity
-                android:name=".ContactsActivity"
-                android:label="@string/app_name" >
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ContactDetailActivity"
+            android:label="@string/activity_details" />
+        <activity
+            android:name=".PrefsActivity"
+            android:label="@string/activity_prefs" />
 
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
-            </activity>
-            <activity
-                android:name=".ContactDetailActivity"
-                android:label="@string/activity_details" />
-            <activity
-                android:name=".PrefsActivity"
-                android:label="@string/activity_prefs" />
+        <provider
+            android:name=".data.ContactsProvider"
+            android:authorities="@string/contacts_authority"
+            android:exported="false" />
 
-            <provider
-                android:name=".data.ContactsProvider"
-                android:authorities="@string/contacts_authority"
-                android:exported="false" />
+        <service android:name=".svc.RESTService" />
 
-            <service android:name=".svc.RESTService" />
-        </application>
+        <activity android:name=".data.Sprite" />
+    </application>
 
-    </manifest>
+</manifest>

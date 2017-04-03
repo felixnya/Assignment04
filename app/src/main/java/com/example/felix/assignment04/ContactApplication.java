@@ -55,6 +55,9 @@ public class ContactApplication extends Application
     @Override
     public void onCreate() {
         super.onCreate();
+
+
+
         if (BuildConfig.DEBUG) { Log.d(TAG, "Application up!"); }
 
         keyApiRoot = getString(R.string.prefs_url_key);
